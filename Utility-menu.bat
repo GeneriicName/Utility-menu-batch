@@ -172,7 +172,7 @@ if exist \\%pc%\c$ (
          set "found=1"
       )
    )
-   set svrs="\\prn03" "\\prn02" "\\prn01" "\\prn04" "\\prn05" "\\prn06"
+   set svrs="\\print_svr1" "\\print_svr2" "\\print_svr3" 
    for /f "tokens=*" %%i in ('reg query "\\%pc%\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers" 2^> nul ') do (
       for /f "tokens=2*" %%a in ('reg query "\\%pc%\%%i" /v Port 2^> nul') do ( 
          set tc=
