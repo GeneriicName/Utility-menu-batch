@@ -109,7 +109,6 @@ goto mainloop
 SETLOCAL ENABLEDELAYEDEXPANSION
 set /p pc=Enter Computer Name or IP address: 
 if exist \\%pc%\c$ (
-   rem REG IMPORT \\NS129\ENABLEIE11\ENABLEIE11.REG > nul 2 > nul
    (REG Delete "\\%pc%\HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}" /f) > nul 2> nul
    (REG Delete "\\%pc%\HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}" /f) > nul 2> nul
    for /F "tokens=1,2" %%i in ('qwinsta /server:%pc% ^| findstr "console"') do (
